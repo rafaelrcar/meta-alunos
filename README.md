@@ -36,8 +36,8 @@ Certifique-se de ter os seguintes requisitos instalados:
   ```
   ### 2️⃣ Clonar o repositório
   ```sh
-  git clone <URL_DO_REPOSITORIO>
-  cd metasAlunos
+  git clone https://github.com/rafaelrcar/meta-alunos
+  cd meta-alunos
   ```
   ### 3️⃣ Instalar dependências
   ```sh
