@@ -1,0 +1,19 @@
+<jhi-page-ribbon></jhi-page-ribbon>
+
+<div>
+  <router-outlet name="navbar"></router-outlet>
+</div>
+
+<!-- Contêiner principal com a classe flexbox -->
+<div class="main-container">
+  <div class="container-fluid">
+    <div class="card jh-card">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+

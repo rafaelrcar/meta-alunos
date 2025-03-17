@@ -1,0 +1,32 @@
+application {
+  config {
+    baseName metasAlunos
+    applicationType monolith
+    authenticationType jwt
+    databaseType sql
+    devDatabaseType h2Disk
+    prodDatabaseType postgresql
+    buildTool maven
+    clientFramework angular
+    enableTranslation false
+  }
+  entities Aluno, Meta
+}
+
+entity Aluno {
+  nome String required
+}
+
+entity Meta {
+  linguagem Integer required
+  humanas Integer required
+  natureza Integer required
+  matematica Integer required
+}
+
+relationship OneToMany {
+  Aluno{metas} to Meta{aluno(nome)}
+}
+
+service * with serviceClass
+paginate Meta with pagination

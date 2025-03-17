@@ -1,0 +1,20 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "metasAlunos",
+    "buildTool": "maven",
+    "clientFramework": "angular",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "enableTranslation": false,
+    "entities": ["Aluno", "Meta"],
+    "jhipsterVersion": "8.9.0",
+    "jwtSecretKey": "YzEyODAwMjU1NjcxNDcxYTg2MzcxMGUyYjc3YjMzOGYwZjdmODljY2JjNTAzNTEzOThmNjUxZWY4OGM3N2IxOGNmZDAxNzgzY2I4NWZmZjJmZmJlOGNlZjE2YmM5ZDQ2MTcyNmIzZGUwNjI3NWY0Y2M2YjVhNjRmOGU3YTcyNDY=",
+    "lastLiquibaseTimestamp": 1742139488000,
+    "monorepository": true,
+    "nativeLanguage": "en",
+    "prodDatabaseType": "postgresql",
+    "skipCommitHook": true
+  }
+}

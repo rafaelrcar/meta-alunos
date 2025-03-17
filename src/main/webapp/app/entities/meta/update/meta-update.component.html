@@ -1,0 +1,115 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-meta-heading" data-cy="MetaCreateUpdateHeading">Create or edit a Meta</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        @let linguagemRef = editForm.get('linguagem')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_linguagem">Linguagem</label>
+          <input type="number" class="form-control" name="linguagem" id="field_linguagem" data-cy="linguagem" formControlName="linguagem" />
+          @if (linguagemRef.invalid && (linguagemRef.dirty || linguagemRef.touched)) {
+            <div>
+              @if (editForm.get('linguagem')?.errors?.required) {
+                <small class="form-text text-danger">This field is required.</small>
+              }
+              <small class="form-text text-danger" [hidden]="!editForm.get('linguagem')?.errors?.number"
+                >This field should be a number.</small
+              >
+            </div>
+          }
+        </div>
+
+        @let humanasRef = editForm.get('humanas')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_humanas">Humanas</label>
+          <input type="number" class="form-control" name="humanas" id="field_humanas" data-cy="humanas" formControlName="humanas" />
+          @if (humanasRef.invalid && (humanasRef.dirty || humanasRef.touched)) {
+            <div>
+              @if (editForm.get('humanas')?.errors?.required) {
+                <small class="form-text text-danger">This field is required.</small>
+              }
+              <small class="form-text text-danger" [hidden]="!editForm.get('humanas')?.errors?.number"
+                >This field should be a number.</small
+              >
+            </div>
+          }
+        </div>
+
+        @let naturezaRef = editForm.get('natureza')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_natureza">Natureza</label>
+          <input type="number" class="form-control" name="natureza" id="field_natureza" data-cy="natureza" formControlName="natureza" />
+          @if (naturezaRef.invalid && (naturezaRef.dirty || naturezaRef.touched)) {
+            <div>
+              @if (editForm.get('natureza')?.errors?.required) {
+                <small class="form-text text-danger">This field is required.</small>
+              }
+              <small class="form-text text-danger" [hidden]="!editForm.get('natureza')?.errors?.number"
+                >This field should be a number.</small
+              >
+            </div>
+          }
+        </div>
+
+        @let matematicaRef = editForm.get('matematica')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_matematica">Matematica</label>
+          <input
+            type="number"
+            class="form-control"
+            name="matematica"
+            id="field_matematica"
+            data-cy="matematica"
+            formControlName="matematica"
+          />
+          @if (matematicaRef.invalid && (matematicaRef.dirty || matematicaRef.touched)) {
+            <div>
+              @if (editForm.get('matematica')?.errors?.required) {
+                <small class="form-text text-danger">This field is required.</small>
+              }
+              <small class="form-text text-danger" [hidden]="!editForm.get('matematica')?.errors?.number"
+                >This field should be a number.</small
+              >
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_aluno">Aluno</label>
+          <select class="form-control" id="field_aluno" data-cy="aluno" name="aluno" formControlName="aluno" [compareWith]="compareAluno">
+            <option [ngValue]="null"></option>
+            @for (alunoOption of alunosSharedCollection; track $index) {
+              <option [ngValue]="alunoOption">{{ alunoOption.nome }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

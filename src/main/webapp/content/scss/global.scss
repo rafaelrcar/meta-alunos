@@ -1,0 +1,95 @@
+@import 'bootstrap-variables';
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
+/* ============================================================== 
+   Bootstrap tweaks 
+=============================================================== */
+
+body,
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 300;
+}
+
+/* Melhorando a acessibilidade do link */
+a {
+  color: #533f03;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #533f03;
+  cursor: pointer;
+}
+
+/* Estilizando dropdown */
+.dropdown-item:hover {
+  color: $dropdown-link-hover-color;
+}
+
+/* ==========================================================
+   Erros e validações
+========================================================== */
+
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid green;
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid red;
+}
+
+/* Cartões e botões */
+.jh-card {
+  padding: 1.5%;
+  margin-top: 20px;
+  border: none;
+}
+
+/* Mensagens de erro */
+.error {
+  color: white;
+  background-color: red;
+}
+
+/* Layout responsivo */
+.pad {
+  padding: 10px;
+}
+
+.w-40 {
+  width: 40% !important;
+}
+
+.w-60 {
+  width: 60% !important;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#app-view {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Garante que ocupe toda a tela
+}
+
+.main-content {
+  flex: 1; // Expande para empurrar o rodapé para baixo
+}
+
+.footer {
+  background-color: #343a40; // Cor escura
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  margin-top: auto; // Faz o rodapé ir para o fim
+}

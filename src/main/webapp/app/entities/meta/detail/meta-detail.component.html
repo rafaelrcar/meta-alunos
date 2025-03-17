@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (meta(); as metaRef) {
+      <div>
+        <h2 data-cy="metaDetailsHeading"><span>Meta</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ metaRef.id }}</span>
+          </dd>
+          <dt><span>Linguagem</span></dt>
+          <dd>
+            <span>{{ metaRef.linguagem }}</span>
+          </dd>
+          <dt><span>Humanas</span></dt>
+          <dd>
+            <span>{{ metaRef.humanas }}</span>
+          </dd>
+          <dt><span>Natureza</span></dt>
+          <dd>
+            <span>{{ metaRef.natureza }}</span>
+          </dd>
+          <dt><span>Matematica</span></dt>
+          <dd>
+            <span>{{ metaRef.matematica }}</span>
+          </dd>
+          <dt><span>Aluno</span></dt>
+          <dd>
+            @if (meta()!.aluno) {
+              <div>
+                <a [routerLink]="['/aluno', meta()!.aluno?.id, 'view']">{{ metaRef.aluno?.nome }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/meta', metaRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>
