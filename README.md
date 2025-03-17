@@ -36,8 +36,8 @@ Certifique-se de ter os seguintes requisitos instalados:
   ```
   ### 2️⃣ Clonar o repositório
   ```sh
-  git clone <URL_DO_REPOSITORIO>
-  cd metasAlunos
+  git clone https://github.com/rafaelrcar/meta-alunos
+  cd meta-alunos
   ```
   ### 3️⃣ Instalar dependências
   ```sh
@@ -48,15 +48,16 @@ Certifique-se de ter os seguintes requisitos instalados:
   ```sh
   docker-compose -f src/main/docker/postgresql.yml up -d
   ```
-  ### 2. Rodar a aplicação no ambiente de desenvolvimento
+  ### 2. Rodar o back-end
    ```sh
-  npm start
+  ./mvnw 
   ```
    A aplicação estará disponível em: http://localhost:9000
-  ### 3. Rodar a aplicação no ambiente de produção
+  ### 3. Rodar o front-end
   ```sh
-  ./mvnw -Pprod
+  npm start
   ```
+  A aplicação estará disponível em: http://localhost:9000
   ## 🔑 Acesso e Uso
 
 Acesse a plataforma em: [http://localhost:9000](http://localhost:9000)  
